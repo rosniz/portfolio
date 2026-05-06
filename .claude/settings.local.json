@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(Get-ChildItem \"c:\\\\Users\\\\zidan\\\\OneDrive\\\\Documents\\\\PORTFOLIO\\\\frontend\\\\src\\\\components\")",
-      "Bash(Select-Object Name)",
-      "PowerShell(cd \"C:\\\\Users\\\\zidan\\\\OneDrive\\\\Documents\\\\PORTFOLIO\\\\backend\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'C:\\\\Users\\\\zidan\\\\OneDrive\\\\Documents\\\\PORTFOLIO\\\\backend'; .\\\\venv\\\\Scripts\\\\python manage.py runserver\")"
-    ]
-  }
-}
