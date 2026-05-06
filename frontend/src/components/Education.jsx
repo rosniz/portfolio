@@ -10,7 +10,7 @@ export default function Education() {
   const { t } = useLang()
 
   useEffect(() => {
-    api.getEducation().then(r => { if (r.data.length) setEducation(r.data) }).catch(() => {})
+    api.getEducation().then(r => { if (Array.isArray(r.data) && r.data.length) setEducation(r.data) }).catch(() => {})
   }, [])
 
   return (

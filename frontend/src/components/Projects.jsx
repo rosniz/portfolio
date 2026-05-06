@@ -100,7 +100,7 @@ export default function Projects() {
   const { t } = useLang()
 
   useEffect(() => {
-    api.getProjects().then(r => { if (r.data.length) setProjects(r.data) }).catch(() => {})
+    api.getProjects().then(r => { if (Array.isArray(r.data) && r.data.length) setProjects(r.data) }).catch(() => {})
   }, [])
 
   return (

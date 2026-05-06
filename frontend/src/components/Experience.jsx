@@ -58,7 +58,7 @@ export default function Experience() {
   const { t } = useLang()
 
   useEffect(() => {
-    api.getExperiences().then(r => { if (r.data.length) setExperiences(r.data) }).catch(() => {})
+    api.getExperiences().then(r => { if (Array.isArray(r.data) && r.data.length) setExperiences(r.data) }).catch(() => {})
   }, [])
 
   return (

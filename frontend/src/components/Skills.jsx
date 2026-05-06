@@ -78,7 +78,7 @@ export default function Skills() {
   const { t } = useLang()
 
   useEffect(() => {
-    api.getSkills().then(r => { if (r.data.length) setCategories(r.data) }).catch(() => {})
+    api.getSkills().then(r => { if (Array.isArray(r.data) && r.data.length) setCategories(r.data) }).catch(() => {})
   }, [])
 
   const current = categories[active]

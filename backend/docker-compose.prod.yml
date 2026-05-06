@@ -6,12 +6,7 @@ services:
     image: portfolio-backend-web
     container_name: portfolio_web
     restart: always
-    command: >
-      sh -c "python manage.py migrate --noinput &&
-             python manage.py seed_data &&
-             python manage.py collectstatic --noinput &&
-             gunicorn --bind 0.0.0.0:8000 --workers 2 --timeout 60
-             portfolio_project.wsgi:application"
+    command: sh -c "python manage.py migrate --noinput && python manage.py seed_data && python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 --workers 2 --timeout 60 portfolio_project.wsgi:application"
     volumes:
       - /opt/portfolio-backend/staticfiles:/app/staticfiles
       - /opt/portfolio-backend/media:/app/media

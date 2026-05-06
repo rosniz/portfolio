@@ -10,7 +10,7 @@ export default function Certifications() {
   const { t } = useLang()
 
   useEffect(() => {
-    api.getCertifications().then(r => { if (r.data.length) setCertifications(r.data) }).catch(() => {})
+    api.getCertifications().then(r => { if (Array.isArray(r.data) && r.data.length) setCertifications(r.data) }).catch(() => {})
   }, [])
 
   return (
