@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    image: portfolio-backend-web
+    container_name: portfolio_web
+    restart: always
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py seed_data &&
+             python manage.py collectstatic --noinput &&
+             gunicorn --bind 0.0.0.0:8000 --workers 2 --timeout 60
+             portfolio_project.wsgi:application"
+    volumes:
+      - /opt/portfolio-backend/staticfiles:/app/staticfiles
+      - /opt/portfolio-backend/media:/app/media
+      - /opt/portfolio-backend/db:/app/db
+    environment:
+      - DB_DIR=/app/db
+    env_file:
+      - .env.prod
+    networks:
+      - portfolio_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  portfolio_network:
+    driver: bridge
