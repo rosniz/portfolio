@@ -20,7 +20,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to   = "https://api-portfolio.visiontechsarl.com/api/:splat"
+  to   = "https://api.rosnifombeu.com/api/:splat"
   status = 200
   force = true
 

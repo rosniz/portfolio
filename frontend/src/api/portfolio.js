@@ -27,7 +27,7 @@ export const STATIC_DATA = {
     linkedin: 'https://linkedin.com/in/rosni-fombeu-111aab408',
     portfolio_url: 'https://rosnifombeu.netlify.app',
     photo_url: null,
-    cv_url: null,
+    cv_url: '',
   },
 
   skills: [

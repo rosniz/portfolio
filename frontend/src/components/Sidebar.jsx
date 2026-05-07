@@ -47,7 +47,7 @@ function SidebarContent({ onClose }) {
       )}
 
       {/* Profile */}
-      <div className="px-6 pt-20 pb-5 text-center">
+      <div className="px-6 pt-4 lg:pt-20 pb-5 text-center">
         <div className="relative inline-block mb-4">
           <div className="p-0.5 rounded-2xl"
                style={{ background: 'linear-gradient(135deg, #3b82f6, #f43f5e)' }}>
@@ -62,11 +62,10 @@ function SidebarContent({ onClose }) {
                 style={{ borderColor: 'var(--bg-sidebar)' }} />
         </div>
 
-        <h2 className="font-bold text-[17px]" style={{ color: 'var(--text-primary)' }}>
+        <h2 className="font-bold text-[17px] text-white">
           {profile.name}
         </h2>
-        <p className="mt-1.5 text-[11px] font-mono leading-snug px-2"
-           style={{ color: 'var(--text-muted)' }}>
+        <p className="mt-1 text-[11px] font-mono leading-snug px-2 text-slate-400">
           {profile.title?.split('|')[0]?.trim()}
         </p>
         <div className="flex items-center justify-center gap-1.5 mt-2 text-xs"
@@ -134,14 +133,15 @@ function SidebarContent({ onClose }) {
 
       {/* Social + CV */}
       <div className="px-4 pb-6 space-y-3">
-        
-        <a href={profile.cv_url || '#'} download={!!profile.cv_url}
-           className="flex items-center justify-center gap-2 w-full py-3 rounded-xl
-                      text-sm font-semibold text-white"
-           style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
-                    boxShadow: '0 4px 20px rgba(37,99,235,0.3)' }}>
-          <HiDownload size={16} /> {t('nav.downloadCv')}
-        </a>
+        {profile.cv_url && (
+          <a href={profile.cv_url} download target="_blank" rel="noopener noreferrer"
+             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl
+                        text-sm font-semibold text-white"
+             style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+                      boxShadow: '0 4px 20px rgba(37,99,235,0.3)' }}>
+            <HiDownload size={16} /> {t('nav.downloadCv')}
+          </a>
+        )}
       </div>
     </div>
   )

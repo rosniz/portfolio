@@ -63,11 +63,11 @@ export default function TopBar({ onMenuOpen }) {
         {/* Right controls */}
         <div className="flex items-center gap-2 ml-auto">
 
-          {/* CV Download button */}
-          <a
-            href={profile.cv_url || '#'}
-            download={!!profile.cv_url}
-            target={profile.cv_url ? '_blank' : undefined}
+          {/* CV Download button — masqué si pas de CV */}
+          {profile.cv_url && <a
+            href={profile.cv_url}
+            download
+            target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
                        text-white transition-all hover:opacity-90 hover:-translate-y-px"
@@ -76,7 +76,7 @@ export default function TopBar({ onMenuOpen }) {
           >
             <HiDownload size={14} />
             {t('nav.downloadCv')}
-          </a>
+          </a>}
 
           {/* Theme toggle */}
           <div className="flex items-center p-0.5 rounded-xl gap-0.5"
