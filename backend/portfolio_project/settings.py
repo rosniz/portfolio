@@ -96,6 +96,13 @@ CORS_ALLOWED_ORIGINS = config(
 
 CORS_ALLOW_METHODS = ['GET', 'POST', 'OPTIONS']
 
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='http://localhost:8000'
+).split(',')
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # ─── Email (Zoho SMTP) ────────────────────────────────────────
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST          = config('EMAIL_HOST',          default='smtp.zoho.com')
