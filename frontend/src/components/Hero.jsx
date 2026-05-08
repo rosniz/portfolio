@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import { HiArrowDown, HiMail } from 'react-icons/hi'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaYoutube } from 'react-icons/fa'
 import { SiPython, SiDjango, SiReact, SiDocker } from 'react-icons/si'
 import { useLang } from '../context/LanguageContext'
 
@@ -88,37 +88,44 @@ export default function Hero() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55 }} className="flex flex-wrap gap-4 mb-10">
+          transition={{ delay: 0.55 }} className="grid grid-cols-3 gap-3 mb-10 max-w-sm">
           {[
             { value: '4+', label: t('hero.stats.experience') },
             { value: '2',  label: t('hero.stats.projects') },
             { value: '8+', label: t('hero.stats.certifications') },
           ].map((s) => (
-            <div key={s.label} className="px-5 py-3 rounded-xl text-center min-w-[100px]"
+            <div key={s.label} className="py-3 px-2 rounded-xl text-center"
                  style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
               <p className="text-2xl font-black gradient-text-blue">{s.value}</p>
-              <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
+              <p className="text-[10px] mt-0.5 leading-tight" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
             </div>
           ))}
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65 }} className="flex flex-wrap gap-4 mb-16">
-          <Link to="projects" smooth duration={600} offset={-20}>
-            <button className="btn-primary text-[15px] px-8 py-3.5">
+          transition={{ delay: 0.65 }} className="flex flex-col sm:flex-row flex-wrap gap-3 mb-16">
+          <Link to="projects" smooth duration={600} offset={-20} className="w-full sm:w-auto">
+            <button className="btn-primary text-[15px] px-8 py-3.5 w-full sm:w-auto">
               {t('hero.cta.projects')} <HiArrowDown size={16} />
             </button>
           </Link>
-          <Link to="contact" smooth duration={600} offset={-20}>
-            <button className="btn-outline text-[15px] px-8 py-3.5">
+          <Link to="contact" smooth duration={600} offset={-20} className="w-full sm:w-auto">
+            <button className="btn-outline text-[15px] px-8 py-3.5 w-full sm:w-auto">
               <HiMail size={18} /> {t('hero.cta.contact')}
             </button>
           </Link>
-          <a href="https://github.com/rosnifombeu" target="_blank" rel="noopener noreferrer"
-             className="btn-outline text-[15px] px-5 py-3.5"
-             style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
-            <FaGithub size={18} />
-          </a>
+          <div className="flex gap-3">
+            <a href="https://github.com/rosniz" target="_blank" rel="noopener noreferrer"
+               className="btn-outline text-[15px] px-5 py-3.5 flex-1 sm:flex-none flex items-center justify-center gap-2"
+               style={{ color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
+              <FaGithub size={18} /> <span className="sm:hidden text-sm">GitHub</span>
+            </a>
+            <a href="https://www.youtube.com/@RosniFombeuDevFullstack" target="_blank" rel="noopener noreferrer"
+               className="btn-outline text-[15px] px-5 py-3.5 flex-1 sm:flex-none flex items-center justify-center gap-2"
+               style={{ color: '#ff0000', borderColor: 'var(--border)' }}>
+              <FaYoutube size={18} /> <span className="sm:hidden text-sm">YouTube</span>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>

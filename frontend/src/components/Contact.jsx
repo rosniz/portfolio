@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 import { HiMail, HiPhone, HiLocationMarker, HiPaperAirplane } from 'react-icons/hi'
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 import { useLang } from '../context/LanguageContext'
 import { api } from '../api/portfolio'
 
@@ -68,11 +68,12 @@ export default function Contact() {
             </div>
           ))}
 
-          <div className="grid grid-cols-3 gap-2 pt-1">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
             {[
               { icon: FaGithub,   label: 'GitHub',    href: 'https://github.com/rosniz' },
               { icon: FaLinkedin, label: 'LinkedIn',  href: 'https://linkedin.com/in/rosni-fombeu-111aab408' },
               { icon: FaWhatsapp, label: 'WhatsApp',  href: 'https://wa.me/237674554947' },
+              { icon: FaYoutube,  label: 'YouTube',   href: 'https://www.youtube.com/@RosniFombeuDevFullstack' },
             ].map(({ icon: Icon, label, href }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                  className="flex-1 card !p-3 flex flex-col items-center gap-1.5 text-xs font-medium

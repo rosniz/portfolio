@@ -25,6 +25,7 @@ export const STATIC_DATA = {
     phone: '+237 674 554 947',
     github: 'https://github.com/rosniz',
     linkedin: 'https://linkedin.com/in/rosni-fombeu-111aab408',
+    youtube: 'https://www.youtube.com/@RosniFombeuDevFullstack',
     portfolio_url: 'https://rosnifombeu.netlify.app',
     photo_url: null,
     cv_url: '',

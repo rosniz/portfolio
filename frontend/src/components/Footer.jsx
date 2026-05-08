@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll'
-import { FaHeart, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaHeart, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 import { useLang } from '../context/LanguageContext'
 
@@ -56,6 +56,7 @@ export default function Footer() {
                 { icon: HiMail,    href: 'mailto:rosnifombeu@visiontechsarl.com', label: 'rosnifombeu@visiontechsarl.com' },
                 { icon: FaGithub,   href: 'https://github.com/rosniz',                           label: 'GitHub' },
                 { icon: FaLinkedin, href: 'https://linkedin.com/in/rosni-fombeu-111aab408', label: 'LinkedIn' },
+                { icon: FaYoutube,  href: 'https://www.youtube.com/@RosniFombeuDevFullstack', label: 'YouTube' },
               ].map(({ icon: Icon, href, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                    className="flex items-center gap-2 text-xs transition-colors hover:text-blue-400"
