@@ -26,7 +26,7 @@ export const STATIC_DATA = {
     github: 'https://github.com/rosniz',
     linkedin: 'https://linkedin.com/in/rosni-fombeu-111aab408',
     youtube: 'https://www.youtube.com/@RosniFombeuDevFullstack',
-    portfolio_url: 'https://rosnifombeu.netlify.app',
+    portfolio_url: 'https://rosnifombeu.com',
     photo_url: null,
     cv_url: '',
   },
