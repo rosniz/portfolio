@@ -232,7 +232,7 @@ class Command(BaseCommand):
         formations = [
             {
                 'degree': 'Licence en Intelligence Artificielle et Big Data',
-                'school': 'KEYCE Informatique',
+                'school': "Institut Universitaire de l'Estuaire",
                 'start_year': '2023',
                 'end_year': '2024',
                 'description': 'Formation spécialisée en IA et analyse de données',
